@@ -7,12 +7,10 @@
 # @lc code=start
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        seen = {}
+        result = 0
         for x in nums:
-            seen[x] = seen.get(x, 0) + 1
-        for k, v in seen.items():
-            if v != 2:
-                return k
+            result ^= x
+        return result
 
 
         
